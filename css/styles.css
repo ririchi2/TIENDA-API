@@ -1,13 +1,44 @@
-.testing {
-  width: 71.42857%; }
-
 * {
   box-sizing: border-box;
   margin: 0px; }
 
 header {
-  background-color: green;
+  background-color: #033803;
   color: orange; }
 
 h1 {
   text-align: center; }
+
+.index h2 {
+  color: #033803; }
+
+.index input {
+  color: #033803;
+  background-color: #e5ffd3;
+  border: 1px solid #033803;
+  border-radius: 5px;
+  display: block; }
+
+.index input:hover {
+  background-color: #c1efa4; }
+
+main {
+  height: 100%;
+  display: flex;
+  justify-content: center; }
+
+.loader {
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #c1efa4;
+  /* Blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }

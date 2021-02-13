@@ -1,6 +1,6 @@
-.testing {
-    width: percentage(5/7);
-}
+$greenStrong: #033803;
+$greenInputBack: #e5ffd3;
+$greenInputHover: #c1efa4;
 
 * {
     box-sizing: border-box;
@@ -8,9 +8,40 @@
 }
 
 header {
-    background-color: green;
+    background-color: $greenStrong;
     color: orange;
 }
 h1 {
     text-align: center;
+}
+.index h2 {
+    color: $greenStrong;
+}
+.index input {
+    color: $greenStrong;
+    background-color: $greenInputBack;
+    border: 1px solid $greenStrong;
+    border-radius: 5px;
+    display: block;
+}
+.index input:hover {
+    background-color: $greenInputHover;
+}
+main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid $greenInputHover; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
