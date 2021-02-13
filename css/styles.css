@@ -1,0 +1,9 @@
+.testing {
+  width: 71.42857%; }
+
+* {
+  box-sizing: border-box;
+  margin: 0px; }
+
+body {
+  background-color: red; }
