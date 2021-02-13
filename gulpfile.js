@@ -20,6 +20,16 @@ gulp.task('browserSync', function(){
     })
 });
 
+gulp.task('serve', gulp.series(['sass'], function(){
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    })
+    gulp.watch('./css/styles.scss', gulp.series(['sass']));
+    gulp.watch("./*.html").on('change', browserSync.reload);
+    gulp.watch("./js/*.js").on('change', browserSync.reload);
+}));
 
 // Static Server + watching scss/html/js files
 gulp.task('watch', gulp.series(['sass']), function() {
