@@ -23,6 +23,7 @@ h1 {
   background-color: #c1efa4; }
 
 main {
+  margin-top: 20px;
   height: 100%;
   display: flex;
   justify-content: center; }
@@ -42,3 +43,9 @@ main {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+
+.card {
+  width: 500px;
+  height: 100px;
+  border: 1px solid #033803;
+  border-radius: 20px; }
