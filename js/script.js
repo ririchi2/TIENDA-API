@@ -29,40 +29,7 @@ var options = {
 };
 
 // FETCH
-document.getElementById("btnFetch").addEventListener("click", () => {
-    indexContainer.style.display = "none";
-    loadingContainer.style.display = "";
-    fetch("https://webapp-210130211157.azurewebsites.net/webresources/mitienda/", options)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                console.log("Respuesta de red OK pero respuesta HTTP no OK");
-                indexContainer.style.display = "";
-                loadingContainer.style.display = "none";
-            }
-        })
-        .then(data => {
-            data.forEach(data => {
-                loadingContainer.style.display = "none";
-                resultContainer.style.display = "";
-                //   console.log(data.idTienda);
-
-                var cardContainer = createNode("div", "", ["card"], []);
-                resultContainer.appendChild(cardContainer);
-                var h2Card = createNode("h2", data.nombreTienda, [], []);
-                cardContainer.appendChild(h2Card);
-                cardContainer.appendChild(createNode("p", `${data.direccion} (${data.localidad})`, [], []));
-                cardContainer.appendChild(createNode("p", data.telefono, [], []));
-            });
-        })
-        .catch(function (error) {
-            console.log("Hubo un problema con la peticion Fetch: " + error.message);
-            indexContainer.style.display = "";
-            loadingContainer.style.display = "none";
-        })
-
-});
+fetchRequest();
 
 //XHR
 const client = new XMLHttpRequest();
@@ -92,7 +59,45 @@ document.getElementById("btnXHR").addEventListener("click", () => {
     client.send();
 
 
-})
+});
+
+function fetchRequest() {
+    document.getElementById("btnFetch").addEventListener("click", () => {
+        indexContainer.style.display = "none";
+        loadingContainer.style.display = "";
+        fetch("https://webapp-210130211157.azurewebsites.net/webresources/mitienda/", options)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.log("Respuesta de red OK pero respuesta HTTP no OK");
+                    indexContainer.style.display = "";
+                    loadingContainer.style.display = "none";
+                }
+            })
+            .then(data => {
+                data.forEach(data => {
+                    loadingContainer.style.display = "none";
+                    resultContainer.style.display = "";
+                    //   console.log(data.idTienda);
+                    var cardContainer = createNode("div", "", ["card"], []);
+                    resultContainer.appendChild(cardContainer);
+                    var h2Card = createNode("h2", data.nombreTienda, [], []);
+                    cardContainer.appendChild(h2Card);
+                    cardContainer.appendChild(createNode("p", `${data.direccion} (${data.localidad})`, [], []));
+                    cardContainer.appendChild(createNode("p", data.telefono, [], []));
+                });
+            })
+            .catch(function (error) {
+                console.log("Hubo un problema con la peticion Fetch: " + error.message);
+                indexContainer.style.display = "";
+                loadingContainer.style.display = "none";
+            });
+
+    });
+}
+
+//JQUERY
 
 // METODOS
 function createNode(nodeName, nodeText, nodeClasses, nodeAttributes) {
