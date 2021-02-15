@@ -28,9 +28,8 @@ var options = {
     cache: 'default'
 };
 
-const btnFetch = document.getElementById("btnFetch");
-
-btnFetch.addEventListener("click", () => {
+// FETCH
+document.getElementById("btnFetch").addEventListener("click", () => {
     indexContainer.style.display = "none";
     loadingContainer.style.display = "";
     fetch("https://webapp-210130211157.azurewebsites.net/webresources/mitienda/", options)
@@ -65,6 +64,35 @@ btnFetch.addEventListener("click", () => {
 
 });
 
+//XHR
+const client = new XMLHttpRequest();
+document.getElementById("btnXHR").addEventListener("click", () => {
+    indexContainer.style.display = "none";
+    loadingContainer.style.display = "";
+    client.addEventListener("readystatechange", () => {
+        if (client.readyState === 4 && client.status === 200) {
+            loadingContainer.style.display = "none";
+            resultContainer.style.display = "";
+            var data = JSON.parse(client.responseText);
+            data.forEach(data => {
+                loadingContainer.style.display = "none";
+                resultContainer.style.display = "";
+                //   console.log(data.idTienda);
+
+                var cardContainer = createNode("div", "", ["card"], []);
+                resultContainer.appendChild(cardContainer);
+                var h2Card = createNode("h2", data.nombreTienda, [], []);
+                cardContainer.appendChild(h2Card);
+                cardContainer.appendChild(createNode("p", `${data.direccion} (${data.localidad})`, [], []));
+                cardContainer.appendChild(createNode("p", data.telefono, [], []));
+            })
+        }
+      });
+    client.open("GET", "https://webapp-210130211157.azurewebsites.net/webresources/mitienda/");
+    client.send();
+
+
+})
 
 // METODOS
 function createNode(nodeName, nodeText, nodeClasses, nodeAttributes) {
