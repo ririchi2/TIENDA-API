@@ -1,5 +1,7 @@
 // var urlApi = "https://webapp-210130211157.azurewebsites.net/webresources/mitienda/";
 
+
+
 // Containers
 const mainContainer = document.getElementsByTagName("main")[0];
 const indexContainer = document.getElementsByClassName("index")[0];
