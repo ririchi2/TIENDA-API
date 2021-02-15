@@ -17,12 +17,6 @@ showCardForm.addEventListener("click", () => {
         cardFormContainer.style.opacity = "0";
         cardFormContainer.style.height = "0px";
     }
-
-    // console.log(cardFormContainer.style.opacity);
-    // if (cardFormContainer.style.opacity == "1") {
-    //     cardFormContainer.style.opacity = "0";
-    //     cardFormContainer.style.height = "0px";
-    // }
 })
 
 // Opciones de la peticion
