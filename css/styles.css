@@ -55,3 +55,23 @@ main {
 
 .card h2 {
   color: #033803; }
+
+#showCardForm {
+  color: #033803; }
+
+#showCardForm:hover {
+  cursor: pointer; }
+
+.cardForm {
+  width: 500px;
+  height: 0px;
+  opacity: 0;
+  border: 1px solid #033803;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  display: grid;
+  transition: opacity 0.001s linear; }
+
+.cardForm h2 {
+  color: #c1efa4; }

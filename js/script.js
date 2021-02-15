@@ -5,6 +5,25 @@ const mainContainer = document.getElementsByTagName("main")[0];
 const indexContainer = document.getElementsByClassName("index")[0];
 const loadingContainer = document.getElementsByClassName("loading")[0];
 const resultContainer = document.getElementsByClassName("result")[0];
+const cardFormContainer = document.getElementsByClassName("cardForm")[0];
+const showCardForm = document.getElementById("showCardForm");
+
+
+showCardForm.addEventListener("click", () => {
+    if (cardFormContainer.style.opacity == "0") {
+        cardFormContainer.style.opacity = "1";
+        cardFormContainer.style.height = "150px";
+    } else {
+        cardFormContainer.style.opacity = "0";
+        cardFormContainer.style.height = "0px";
+    }
+
+    // console.log(cardFormContainer.style.opacity);
+    // if (cardFormContainer.style.opacity == "1") {
+    //     cardFormContainer.style.opacity = "0";
+    //     cardFormContainer.style.height = "0px";
+    // }
+})
 
 // Opciones de la peticion
 var myHeaders = new Headers();

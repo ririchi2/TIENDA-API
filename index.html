@@ -12,7 +12,7 @@
         <h1>TIENDAS API</h1>
     </header>
     <main>
-        <section class="index">
+        <section class="index" style="display: ;">
             <h2>Elige el metodo para realizar AJAX:</h2>
             <input type="button" value="XHR">
             <input type="button" value="FETCH" id="btnFetch">
@@ -22,7 +22,10 @@
             <div class="loader"></div> 
         </section>
         <section class="result" style="display: none;">
-            <a href="">Nueva tienda</a>
+            <a id="showCardForm">Nueva tienda</a>
+            <div class="cardForm">
+                <h2>Nueva Empresa</h2>
+            </div>
         </section>
     </main>
     <script src="/js/jquery-3.5.1.js" type="text/javascript"></script>
