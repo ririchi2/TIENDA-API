@@ -4,6 +4,8 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
 
+sass.compiler = require('node-sass');
+
 
 gulp.task('sass', function(){
     return gulp.src("./css/*.scss")
