@@ -25,23 +25,26 @@
             <a id="showCardForm">Nueva tienda</a>
             <div class="cardForm">
                 <h2>Nueva Empresa</h2>
-                <form action="">
+                <form id="filter" action="https://webapp-210130211157.azurewebsites.net/webresources/mitienda/" method="POST">
                     <p>
-                        <label for="">Nombre</label>
-                        <input type="text">
+                        <label for="nombreTienda">Nombre</label>
+                        <input type="text" name="nombreTienda" id="nombreTienda">
                     </p>
                     <p>
-                        <label for="">Direccion</label>
-                        <input type="text">
+                        <label for="direccion">Direccion</label>
+                        <input type="text" name="direccion" id="direccion">
                     </p>
                     <p>
-                        <label for="">Localidad</label>
-                        <input type="text">
+                        <label for="localidad">Localidad</label>
+                        <input type="text" name="localidad" id="localidad">
                     </p>
                     <p>
-                        <label for="">Telefono</label>
-                        <input type="text">
+                        <label for="telefono">Telefono</label>
+                        <input type="text" name="telefono" id="telefono">
                     </p>
+                    <div>
+                        <button>Send</button>
+                    </div>
                 </form>
             </div>
         </section>
